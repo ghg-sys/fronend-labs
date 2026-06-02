@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Страница с фиксированным фоном</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url(3.2.jpg);
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;    
+            background-repeat: no-repeat;
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+            line-height: 1.5;
+            color: #1e2a2f;
+            
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+        }
+
+        .content-card {
+            max-width: 880px;
+            margin: 0 auto;          
+            background-color: rgba(248, 249, 252, 0.85);
+            border-radius: 32px;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255,255,255,0.3) inset;
+            padding: 2.2rem 2.5rem;
+            backdrop-filter: blur(0px);  
+            transition: all 0.2s ease;
+        }
+
+        .content-card p {
+            margin-bottom: 1.25rem;
+            font-size: 1rem;
+            text-align: justify;
+            font-weight: 450;
+            color: #1a2a2a;
+        }
+
+        .content-card strong {
+            color: #2c5a2e;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+<div class="content-card">
+    
+    <p><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong> Donec eleifend urna euismod odio scelerisque interdum. Donec hendrerit in nunc sed dictum. Mauris commodo, libero in sodales consectetur, nulla ligula auctor justo, eu laoreet ex lacus vel dolor. Maecenas ultrices mauris vitae metus maximus, non rhoncus ex ullamcorper. Suspendisse volutpat consequat turpis a efficitur. Curabitur sodales convallis urna, id dapibus lectus suscipit hendrerit. Sed vestibulum in nisi vel blandit. Maecenas lacinia tincidunt tortor ac scelerisque. Nulla facilisi. Quisque sagittis, ex in posuere finibus, purus sapien bibendum tellus, a efficitur lorem massa ut urna. Vivamus est ante, sodales eget est at, lacinia efficitur nisl. Integer eget tincidunt lectus. Nullam non pulvinar enim. Vivamus eleifend orci ut leo fringilla, vestibulum tempus elit placerat.</p>
+
+    <p><strong>Nam blandit, libero quis elementum sagittis,</strong> enim eros cursus elit, nec mollis sapien ante id dolor. Aenean vestibulum dapibus lacinia. Sed venenatis tortor magna, nec tempor tortor luctus id. Ut elementum pellentesque orci a eleifend. Curabitur gravida massa in dui rutrum finibus. Morbi ornare pulvinar dolor at tristique. Donec mollis arcu erat, sit amet fringilla nunc porta ut.</p>
+
+    <p><strong>Praesent interdum non justo sed maximus.</strong> Donec nunc dolor, egestas quis porttitor ac, cursus id arcu. Vestibulum aliquam, massa vel finibus lacus diam eget lectus. Proin rhoncus vehicula lectus, a malesuada neque porta at. Fusce vitae nisi ex. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In hac habitasse platea dictumst. Curabitur interdum, urna a convallis ultricies, est libero posuere nisl, sed consequat sapien tortor in nunc.</p>
+       
+    <p><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong> Donec eleifend urna euismod odio scelerisque interdum. Donec hendrerit in nunc sed dictum. Mauris commodo, libero in sodales consectetur, nulla ligula auctor justo, eu laoreet ex lacus vel dolor. Maecenas ultrices mauris vitae metus maximus, non rhoncus ex ullamcorper. Suspendisse volutpat consequat turpis a efficitur. Curabitur sodales convallis urna, id dapibus lectus suscipit hendrerit. Sed vestibulum in nisi vel blandit. Maecenas lacinia tincidunt tortor ac scelerisque. Nulla facilisi. Quisque sagittis, ex in posuere finibus, purus sapien bibendum tellus, a efficitur lorem massa ut urna. Vivamus est ante, sodales eget est at, lacinia efficitur nisl. Integer eget tincidunt lectus. Nullam non pulvinar enim. Vivamus eleifend orci ut leo fringilla, vestibulum tempus elit placerat.</p>
+
+    <p><strong>Nam blandit, libero quis elementum sagittis,</strong> enim eros cursus elit, nec mollis sapien ante id dolor. Aenean vestibulum dapibus lacinia. Sed venenatis tortor magna, nec tempor tortor luctus id. Ut elementum pellentesque orci a eleifend. Curabitur gravida massa in dui rutrum finibus. Morbi ornare pulvinar dolor at tristique. Donec mollis arcu erat, sit amet fringilla nunc porta ut.</p>
+
+    <p><strong>Praesent interdum non justo sed maximus.</strong> Donec nunc dolor, egestas quis porttitor ac, cursus id arcu. Vestibulum aliquam, massa vel finibus lacus diam eget lectus. Proin rhoncus vehicula lectus, a malesuada neque porta at. Fusce vitae nisi ex. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In hac habitasse platea dictumst. Curabitur interdum, urna a convallis ultricies, est libero posuere nisl, sed consequat sapien tortor in nunc.</p>
+       
+    <p><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong> Donec eleifend urna euismod odio scelerisque interdum. Donec hendrerit in nunc sed dictum. Mauris commodo, libero in sodales consectetur, nulla ligula auctor justo, eu laoreet ex lacus vel dolor. Maecenas ultrices mauris vitae metus maximus, non rhoncus ex ullamcorper. Suspendisse volutpat consequat turpis a efficitur. Curabitur sodales convallis urna, id dapibus lectus suscipit hendrerit. Sed vestibulum in nisi vel blandit. Maecenas lacinia tincidunt tortor ac scelerisque. Nulla facilisi. Quisque sagittis, ex in posuere finibus, purus sapien bibendum tellus, a efficitur lorem massa ut urna. Vivamus est ante, sodales eget est at, lacinia efficitur nisl. Integer eget tincidunt lectus. Nullam non pulvinar enim. Vivamus eleifend orci ut leo fringilla, vestibulum tempus elit placerat.</p>
+
+    <p><strong>Nam blandit, libero quis elementum sagittis,</strong> enim eros cursus elit, nec mollis sapien ante id dolor. Aenean vestibulum dapibus lacinia. Sed venenatis tortor magna, nec tempor tortor luctus id. Ut elementum pellentesque orci a eleifend. Curabitur gravida massa in dui rutrum finibus. Morbi ornare pulvinar dolor at tristique. Donec mollis arcu erat, sit amet fringilla nunc porta ut.</p>
+
+    <p><strong>Praesent interdum non justo sed maximus.</strong> Donec nunc dolor, egestas quis porttitor ac, cursus id arcu. Vestibulum aliquam, massa vel finibus lacus diam eget lectus. Proin rhoncus vehicula lectus, a malesuada neque porta at. Fusce vitae nisi ex. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In hac habitasse platea dictumst. Curabitur interdum, urna a convallis ultricies, est libero posuere nisl, sed consequat sapien tortor in nunc.</p>
+       
+    <p><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong> Donec eleifend urna euismod odio scelerisque interdum. Donec hendrerit in nunc sed dictum. Mauris commodo, libero in sodales consectetur, nulla ligula auctor justo, eu laoreet ex lacus vel dolor. Maecenas ultrices mauris vitae metus maximus, non rhoncus ex ullamcorper. Suspendisse volutpat consequat turpis a efficitur. Curabitur sodales convallis urna, id dapibus lectus suscipit hendrerit. Sed vestibulum in nisi vel blandit. Maecenas lacinia tincidunt tortor ac scelerisque. Nulla facilisi. Quisque sagittis, ex in posuere finibus, purus sapien bibendum tellus, a efficitur lorem massa ut urna. Vivamus est ante, sodales eget est at, lacinia efficitur nisl. Integer eget tincidunt lectus. Nullam non pulvinar enim. Vivamus eleifend orci ut leo fringilla, vestibulum tempus elit placerat.</p>
+
+    <p><strong>Nam blandit, libero quis elementum sagittis,</strong> enim eros cursus elit, nec mollis sapien ante id dolor. Aenean vestibulum dapibus lacinia. Sed venenatis tortor magna, nec tempor tortor luctus id. Ut elementum pellentesque orci a eleifend. Curabitur gravida massa in dui rutrum finibus. Morbi ornare pulvinar dolor at tristique. Donec mollis arcu erat, sit amet fringilla nunc porta ut.</p>
+
+    <p><strong>Praesent interdum non justo sed maximus.</strong> Donec nunc dolor, egestas quis porttitor ac, cursus id arcu. Vestibulum aliquam, massa vel finibus lacus diam eget lectus. Proin rhoncus vehicula lectus, a malesuada neque porta at. Fusce vitae nisi ex. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In hac habitasse platea dictumst. Curabitur interdum, urna a convallis ultricies, est libero posuere nisl, sed consequat sapien tortor in nunc.</p>
+       
+    <p><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong> Donec eleifend urna euismod odio scelerisque interdum. Donec hendrerit in nunc sed dictum. Mauris commodo, libero in sodales consectetur, nulla ligula auctor justo, eu laoreet ex lacus vel dolor. Maecenas ultrices mauris vitae metus maximus, non rhoncus ex ullamcorper. Suspendisse volutpat consequat turpis a efficitur. Curabitur sodales convallis urna, id dapibus lectus suscipit hendrerit. Sed vestibulum in nisi vel blandit. Maecenas lacinia tincidunt tortor ac scelerisque. Nulla facilisi. Quisque sagittis, ex in posuere finibus, purus sapien bibendum tellus, a efficitur lorem massa ut urna. Vivamus est ante, sodales eget est at, lacinia efficitur nisl. Integer eget tincidunt lectus. Nullam non pulvinar enim. Vivamus eleifend orci ut leo fringilla, vestibulum tempus elit placerat.</p>
+
+    <p><strong>Nam blandit, libero quis elementum sagittis,</strong> enim eros cursus elit, nec mollis sapien ante id dolor. Aenean vestibulum dapibus lacinia. Sed venenatis tortor magna, nec tempor tortor luctus id. Ut elementum pellentesque orci a eleifend. Curabitur gravida massa in dui rutrum finibus. Morbi ornare pulvinar dolor at tristique. Donec mollis arcu erat, sit amet fringilla nunc porta ut.</p>
+
+    <p><strong>Praesent interdum non justo sed maximus.</strong> Donec nunc dolor, egestas quis porttitor ac, cursus id arcu. Vestibulum aliquam, massa vel finibus lacus diam eget lectus. Proin rhoncus vehicula lectus, a malesuada neque porta at. Fusce vitae nisi ex. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In hac habitasse platea dictumst. Curabitur interdum, urna a convallis ultricies, est libero posuere nisl, sed consequat sapien tortor in nunc.</p>
+    
+</div>
+</body>
+</html>

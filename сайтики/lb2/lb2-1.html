@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Тарелка фруктов</title>
+    <style>
+        
+        body {
+            max-width: 400px;
+            font-family: sans-serif;
+        }
+        ol{
+            padding: 5px;
+        }
+        .fruit-list {
+            background-color: rgb(238, 255, 0); 
+            list-style-type: none;
+            counter-reset: item;
+        }
+        .fruit-list li {
+            margin: 10px;
+            counter-increment: item;
+        }
+
+        .fruit-list li.highlight {
+            background-color: rgb(156, 146, 0);
+        }
+
+        .fruit-list li::before {
+            content: counter(item) "."; 
+            background-color: rgb(128, 104, 0);
+            width: 20px;
+            height: 20px;
+            padding: 5px;
+        }
+
+        .fruit-list li span {
+            display: inline-block;
+            background-color: rgb(98, 105, 0);
+            height: 20px;
+            padding: 5px 10px 5px 10px;
+        }
+    
+    </style>
+</head>
+<body>
+    <ol class="fruit-list">
+        <li class="highlight"><span>Apple</span></li>
+        <li class="highlight"><span>Orange</span></li>
+        <li class="highlight"><span>Pineapple</span></li>
+        <li class="highlight"><span>Pear</span></li>
+        <li class="highlight"><span>Cherry</span></li>
+    </ol>
+
+</body>
+</html>

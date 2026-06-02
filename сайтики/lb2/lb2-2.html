@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Списк дел</title>
+    <style>
+
+    body {
+        font-family: 'Arial', sans-serif;
+        width: 350px;
+        background: rgb(238, 238, 238);
+        border-radius: 10px;
+    }
+    .task-list li {
+        position: relative; 
+        list-style: none;
+        padding: 12px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .uncompleted {
+        background-color: #a36d6d;
+    }
+
+    .completed {
+     background-color: #caffcd;
+     text-decoration: line-through;
+    }
+
+    .uncompleted::before,
+    .completed::before {
+        content: "";          
+        display: inline-block; 
+        width: 20px;        
+        height: 20px;
+        margin-right: 10px;   
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    li::after{
+        margin-left: 10px;
+        display: inline-block;
+        content: "x";          
+        color: red   
+       
+    }
+
+    .uncompleted::before {
+        background-image: url(img.png);
+    }
+
+    .completed::before {
+        background-image: url(img-ok.png);
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>My To Do List</h1>
+        <ul class="task-list">
+            <li class="completed">Hit the gym</li>
+            <li class="completed">Pay bills</li>
+            <li class="uncompleted">Meet John</li>
+            <li class="uncompleted">Buy eggs</li>
+            <li class="completed">Read a book</li>
+            <li class="uncompleted">Organize office</li>
+            <li class="completed">Eat dinner</li>
+            <li class="completed">Buy apples</li>
+            <li class="uncompleted">Meet George</li>
+            <li class="completed">Feed the cat</li>
+            <li class="completed">Write a letter</li>
+            <li class="uncompleted">Run 1 km</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ТехноМир – интернет-магазин электроники. Смартфоны, наушники, ноутбуки и аксессуары.">
+    <title>ТехноМир – Главная</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: #f9fafb; color: #1e293b; line-height: 1.5; }
+        .main-header {
+            background: #ffffff;
+            border-bottom: 3px solid #e2e8f0;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.2rem;
+        }
+        .logo a { font-size: 1.8rem; font-weight: 800; text-decoration: none; color: #0f3b4c; transition: color 0.2s; }
+        .logo a:hover { color: #e67e22; }
+        .nav-menu ul { display: flex; list-style: none; gap: 1.8rem; flex-wrap: wrap; }
+        .nav-menu a { text-decoration: none; font-weight: 600; color: #334155; padding-bottom: 4px; border-bottom: 2px solid transparent; transition: all 0.2s; }
+        .nav-menu a:hover { color: #e67e22; border-bottom-color: #e67e22; }
+        .search-form form { display: flex; border: 1px solid #cbd5e1; border-radius: 60px; overflow: hidden; background: white; transition: border 0.2s; }
+        .search-form form:hover { border-color: #e67e22; }
+        .search-form input { border: none; padding: 0.6rem 1rem; width: 200px; outline: none; font-family: inherit; }
+        .search-form button { background: #f1f5f9; border: none; padding: 0 1.2rem; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+        .search-form button:hover { background: #e67e22; color: white; }
+        main { max-width: 1280px; margin: 2rem auto; padding: 0 2rem; }
+        .greeting h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 0.5rem; color: #0f3b4c; }
+        .popular-section { margin: 3rem 0 2rem; }
+        .popular-section h2 { font-size: 1.8rem; border-left: 5px solid #e67e22; padding-left: 1rem; margin-bottom: 1.8rem; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 2rem; }
+        .product-card {
+            background: white; border: 1px solid #e2e8f0; border-radius: 20px; padding: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .product-card:hover { transform: translateY(-4px); box-shadow: 0 12px 20px rgba(0,0,0,0.05); border-color: #facc15; }
+        .product-img img { width: 100%; height: 160px; object-fit: contain; background: #f8fafc; border-radius: 12px; }
+        .product-info b { font-size: 1.2rem; display: block; margin: 0.8rem 0 0.4rem; }
+        .product-info i { color: #475569; font-size: 0.85rem; display: block; margin-bottom: 0.5rem; }
+        .price { font-size: 1.3rem; font-weight: 700; color: #b45309; margin: 0.5rem 0; }
+        .add-to-cart {
+            background: #0f3b4c; color: white; border: none; padding: 0.6rem 0; width: 100%;
+            border-radius: 40px; font-weight: 600; font-family: inherit; cursor: pointer;
+            transition: background 0.2s; margin-bottom: 0.5rem;
+        }
+        .add-to-cart:hover { background: #e67e22; }
+        .details-link {
+            text-align: center; display: inline-block; width: 100%; font-size: 0.85rem;
+            color: #0f3b4c; text-decoration: none; font-weight: 500;
+            padding: 0.4rem 0; border-top: 1px solid #e2e8f0; margin-top: 0.4rem;
+        }
+        .details-link:hover { color: #e67e22; text-decoration: underline; }
+        .promo-section {
+            background: #fff7ed; border: 1px solid #ffedd5; border-radius: 24px;
+            padding: 1.8rem; margin: 2.5rem 0;
+        }
+        .promo-section h2 { color: #9b4b0e; margin-bottom: 1rem; }
+        .promo-grid { display: flex; flex-wrap: wrap; gap: 1.5rem; }
+        .promo-item {
+            background: white; border-radius: 16px; padding: 1rem; flex: 1;
+            min-width: 180px; border: 1px solid #fde68a;
+        }
+        .promo-badge { background: #ef4444; color: white; padding: 0.2rem 0.8rem; border-radius: 30px; font-size: 0.75rem; font-weight: bold; display: inline-block; margin-bottom: 0.5rem; }
+        .main-footer {
+            background: #0f172a; color: #cbd5e1; padding: 2rem 2rem 1rem;
+            border-top: 4px solid #e67e22; margin-top: 2rem;
+        }
+        .footer-container { max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem; }
+        .footer-section p:first-child { font-weight: 700; color: #facc15; margin-bottom: 0.5rem; }
+        .footer-section a { color: #cbd5e1; text-decoration: none; margin-right: 1rem; transition: color 0.2s; }
+        .footer-section a:hover { color: #facc15; text-decoration: underline; }
+        hr { margin: 1.5rem 0 0.8rem; border-color: #334155; }
+        .copyright { text-align: center; font-size: 0.8rem; padding-top: 1rem; }
+        @media (max-width: 700px) {
+            .header-container { flex-direction: column; align-items: stretch; text-align: center; }
+            .nav-menu ul { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+<header class="main-header">
+    <div class="header-container">
+        <div class="logo"><a href="index.html">📱 ТехноМир</a></div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="#">Каталог</a></li>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Контакты</a></li>
+                <li><a href="#">🛒 Корзина</a></li>
+            </ul>
+        </nav>
+        <div class="search-form">
+            <form action="#" method="get">
+                <input type="text" name="search" placeholder="Поиск...">
+                <button type="submit">Найти</button>
+            </form>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="greeting">
+        <h1>Добро пожаловать в ТехноМир!</h1>
+        <p>Современные гаджеты для работы, учёбы и развлечений.</p>
+    </div>
+    <section class="popular-section">
+        <h2>⭐ Популярные товары</h2>
+        <div class="products-grid">
+            <article class="product-card">
+                <div class="product-img"><img src="smart.jpg" alt="Смартфон X100"></div>
+                <div class="product-info">
+                    <b>Смартфон X100</b>
+                    <i>128 ГБ, 6.7", 50 МП камера, 5000 мАч</i>
+                    <div class="price">21 990 ₽</div>
+                    <button class="add-to-cart">Добавить в корзину</button>
+                    <a href="pr1.html" class="details-link">Подробнее →</a>
+                </div>
+            </article>
+            <article class="product-card">
+                <div class="product-img"><img src="Air.jpg" alt="Наушники"></div>
+                <div class="product-info">
+                    <b>Наушники AirSound Pro</b>
+                    <i>Шумоподавление, 30 ч работы, Bluetooth 5.3</i>
+                    <div class="price">5 490 ₽</div>
+                    <button class="add-to-cart">Добавить в корзину</button>
+                    <a href="pr2.html" class="details-link">Подробнее →</a>
+                </div>
+            </article>
+            <article class="product-card">
+                <div class="product-img"><img src="Note.jpg" alt="Ноутбук"></div>
+                <div class="product-info">
+                    <b>Ноутбук FlexBook 15</b>
+                    <i>Intel Core i5, 16 ГБ RAM, SSD 512 ГБ</i>
+                    <div class="price">54 990 ₽</div>
+                    <button class="add-to-cart">Добавить в корзину</button>
+                    <a href="pr3.html" class="details-link">Подробнее →</a>
+                </div>
+            </article>
+            <article class="product-card">
+                <div class="product-img"><img src="Chas.jpg" alt="Часы"></div>
+                <div class="product-info">
+                    <b>Умные часы WatchFit 3</b>
+                    <i>GPS, мониторинг пульса, AMOLED экран</i>
+                    <div class="price">8 990 ₽</div>
+                    <button class="add-to-cart">Добавить в корзину</button>
+                    <a href="pr4.html" class="details-link">Подробнее →</a>
+                </div>
+            </article>
+        </div>
+    </section>
+    <section class="promo-section">
+        <h2>🔥 Специальные предложения</h2>
+        <div class="promo-grid">
+            <div class="promo-item"><span class="promo-badge">-20%</span><p>Смартфоны + чехол в подарок</p></div>
+            <div class="promo-item"><span class="promo-badge">Подарок</span><p>При заказе от 10 000 ₽ – доставка 0₽</p></div>
+            <div class="promo-item"><span class="promo-badge">Рассрочка</span><p>0% на 6 месяцев на ноутбуки</p></div>
+        </div>
+    </section>
+</main>
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-section"><p>📌 ТехноМир</p><p>© 2025 Все права защищены</p></div>
+        <div class="footer-section"><p>📞 Контакты</p><p>+7 (800) 555-35-35</p><p>support@technomir.ru</p></div>
+        <div class="footer-section"><p>🌐 Соцсети</p><a href="#">VK</a> <a href="#">Telegram</a> <a href="#">YouTube</a></div>
+    </div>
+</footer>
+</body>
+</html>

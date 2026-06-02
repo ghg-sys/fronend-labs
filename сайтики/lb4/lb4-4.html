@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ТехноМир - каталог электроники: смартфоны, наушники, ноутбуки, часы и другие гаджеты">
+    <title>ТехноМир - Каталог товаров</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        /*СБРОС СТИЛЕЙ*/
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f6f9;
+            color: #1e293b;
+            line-height: 1.5;
+        }
+
+        /*HEADER*/
+        .header {
+            background: #ffffff;
+            border-bottom: 2px solid #e2e8f0;
+            padding: 0.8rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header__container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .header__logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            text-decoration: none;
+            color: #0f3b4c;
+            transition: color 0.2s;
+        }
+
+        .header__logo:hover {
+            color: #e67e22;
+        }
+
+        .nav__list {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .nav__link {
+            text-decoration: none;
+            font-weight: 600;
+            color: #334155;
+            padding-bottom: 4px;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .nav__link:hover {
+            color: #e67e22;
+            border-bottom-color: #e67e22;
+        }
+
+        .nav__link--active {
+            color: #e67e22;
+            border-bottom-color: #e67e22;
+        }
+
+        .search {
+            display: flex;
+            border: 1px solid #cbd5e1;
+            border-radius: 40px;
+            overflow: hidden;
+            background: white;
+        }
+
+        .search__input {
+            border: none;
+            padding: 0.5rem 1rem;
+            width: 180px;
+            outline: none;
+            font-family: inherit;
+        }
+
+        .search__btn {
+            background: #f1f5f9;
+            border: none;
+            padding: 0 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .search__btn:hover {
+            background: #e67e22;
+            color: white;
+        }
+
+        /*ОСНОВНОЙ КОНТЕНТ*/
+        .main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .catalog {
+            margin-bottom: 2rem;
+        }
+
+        .catalog__title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0f3b4c;
+            border-left: 5px solid #e67e22;
+            padding-left: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .catalog__grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: flex-start;
+        }
+
+        /*Блок карточки товара*/
+        .product {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            flex: 1 1 220px;
+            min-width: 200px;
+            max-width: 250px;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-color: #facc15;
+        }
+
+        .product__img {
+            width: 100%;
+            height: 150px;
+            object-fit: contain;
+            background: #f8fafc;
+            border-radius: 12px;
+            margin-bottom: 0.8rem;
+        }
+
+        .product__title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+            color: #0f3b4c;
+        }
+
+        .product__desc {
+            font-size: 0.75rem;
+            color: #475569;
+            margin-bottom: 0.6rem;
+            line-height: 1.4;
+        }
+
+        .product__price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #b45309;
+            margin: 0.4rem 0 0.6rem;
+        }
+
+        .product__btn {
+            background: #0f3b4c;
+            color: white;
+            border: none;
+            padding: 0.5rem 0;
+            width: 100%;
+            border-radius: 30px;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: auto;
+        }
+
+        .product__btn:hover {
+            background: #e67e22;
+        }
+
+        /*ПОДВАЛ*/
+        .footer {
+            background: #0f172a;
+            color: #cbd5e1;
+            padding: 1.5rem 2rem 1rem;
+            border-top: 4px solid #e67e22;
+            margin-top: 2rem;
+        }
+
+        .footer__container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+
+        .footer__section p:first-child {
+            font-weight: 700;
+            color: #facc15;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer__section a {
+            color: #cbd5e1;
+            text-decoration: none;
+            margin-right: 1rem;
+            transition: color 0.2s;
+        }
+
+        .footer__section a:hover {
+            color: #facc15;
+            text-decoration: underline;
+        }
+
+        .footer__hr {
+            margin: 1rem 0 0.5rem;
+            border-color: #334155;
+        }
+
+        @media (max-width: 1024px) {
+            .catalog__grid {
+                gap: 1.2rem;
+            }
+            .product {
+                flex: 1 1 210px;
+                min-width: 190px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header__container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .nav__list {
+                justify-content: center;
+                gap: 1rem;
+            }
+            .search {
+                width: 100%;
+                justify-content: center;
+            }
+            .search__input {
+                width: 100%;
+            }
+            .main {
+                padding: 0 1rem;
+            }
+            .catalog__title {
+                font-size: 1.5rem;
+            }
+            .catalog__grid {
+                gap: 1rem;
+                justify-content: center;
+            }
+            .product {
+                flex: 1 1 160px;
+                min-width: 160px;
+                max-width: 200px;
+            }
+            .product__title {
+                font-size: 0.9rem;
+            }
+            .product__price {
+                font-size: 1rem;
+            }
+            .footer__container {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product {
+                flex: 1 1 100%;
+                max-width: 100%;
+                min-width: auto;
+            }
+            .product__img {
+                height: 180px;
+            }
+            .catalog__grid {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ШАПКА -->
+<header class="header">
+    <div class="header__container">
+        <a href="#" class="header__logo">📱 ТехноМир</a>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li><a href="#" class="nav__link">Главная</a></li>
+                <li><a href="lb4-4.html" class="nav__link nav__link--active">Каталог</a></li>
+                <li><a href="#" class="nav__link">О нас</a></li>
+                <li><a href="#" class="nav__link">Контакты</a></li>
+                <li><a href="#" class="nav__link">Корзина</a></li>
+                <li><a href="#" class="nav__link">Доставка</a></li>
+            </ul>
+        </nav>
+        <div class="search">
+            <input type="text" class="search__input" placeholder="Поиск товаров...">
+            <button class="search__btn">Найти</button>
+        </div>
+    </div>
+</header>
+
+<main class="main">
+    <section class="catalog">
+        <h1 class="catalog__title">📦 Каталог товаров</h1>
+        <div class="catalog__grid">
+            
+            <article class="product">
+                <img class="product__img" src="" alt="Смартфон X100">
+                <h3 class="product__title">Смартфон X100</h3>
+                <p class="product__desc">128 ГБ, 6.7", 50 МП камера, быстрая зарядка</p>
+                <div class="product__price">21 990 ₽</div>
+                <button class="product__btn">В корзину</button>
+            </article>
+
+            <article class="product">
+                <img class="product__img" src="" alt="Наушники AirSound">
+                <h3 class="product__title">Наушники AirSound Pro</h3>
+                <p class="product__desc">Шумоподавление, 30 ч работы, Bluetooth 5.3</p>
+                <div class="product__price">5 490 ₽</div>
+                <button class="product__btn">В корзину</button>
+            </article>
+
+            <article class="product">
+                <img class="product__img" src="" alt="Ноутбук FlexBook">
+                <h3 class="product__title">Ноутбук FlexBook 15</h3>
+                <p class="product__desc">Intel Core i5, 16 ГБ RAM, SSD 512 ГБ</p>
+                <div class="product__price">54 990 ₽</div>
+                <button class="product__btn">В корзину</button>
+            </article>
+
+            <article class="product">
+                <img class="product__img" src="" alt="Умные часы">
+                <h3 class="product__title">Умные часы WatchFit 3</h3>
+                <p class="product__desc">GPS, мониторинг пульса, AMOLED экран</p>
+                <div class="product__price">8 990 ₽</div>
+                <button class="product__btn">В корзину</button>
+            </article>
+
+            <article class="product">
+                <img class="product__img" src="" alt="Планшет TabPlus">
+                <h3 class="product__title">Планшет TabPlus 11</h3>
+                <p class="product__desc">10.9", 128 ГБ, стилус в комплекте</p>
+                <div class="product__price">32 490 ₽</div>
+                <button class="product__btn">В корзину</button>
+            </article>
+
+            <article class="product">
+                <img class="product__img" src="" alt="Клавиатура">
+                <h3 class="product__title">Клавиатура MechPro</h3>
+                <p class="product__desc">Механическая, RGB подсветка, USB-C</p>
+                <div class="product__price">3 990 ₽</div>
+                <button class="product__btn">В корзину</button>
+            </article>
+
+            <article class="product">
+                <img class="product__img" src="" alt="Беспроводная мышь">
+                <h3 class="product__title">Мышь FlowMaster</h3>
+                <p class="product__desc">Беспроводная, 16000 DPI, тихие клики</p>
+                <div class="product__price">2 290 ₽</div>
+                <button class="product__btn">В корзину</button>
+            </article>
+
+            <article class="product">
+                <img class="product__img" src="" alt="Монитор">
+                <h3 class="product__title">Монитор ViewMax 27"</h3>
+                <p class="product__desc">IPS, 165 Гц, 1 мс, FreeSync</p>
+                <div class="product__price">19 990 ₽</div>
+                <button class="product__btn">В корзину</button>
+            </article>
+
+            <article class="product">
+                <img class="product__img" src="" alt="Портативная колонка">
+                <h3 class="product__title">Колонка SoundBoom</h3>
+                <p class="product__desc">Влагозащита, 20 Вт, 12 ч работы</p>
+                <div class="product__price">4 490 ₽</div>
+                <button class="product__btn">В корзину</button>
+            </article>
+
+            <article class="product">
+                <img class="product__img" src="" alt="Зарядное устройство">
+                <h3 class="product__title">Зарядка 65W GaN</h3>
+                <p class="product__desc">3 порта, быстрая зарядка для ноутбука</p>
+                <div class="product__price">2 990 ₽</div>
+                <button class="product__btn">В корзину</button>
+            </article>
+
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="footer__container">
+        <div class="footer__section">
+            <p>📌 ТехноМир</p>
+            <p>© 2026 Все права защищены</p>
+        </div>
+        <div class="footer__section">
+            <p>📞 Контакты</p>
+            <p>+7 (800) 555-35-35</p>
+            <p>support@technomir.ru</p>
+        </div>
+        <div class="footer__section">
+            <p>🌐 Соцсети</p>
+            <a href="#">VK</a> <a href="#">Telegram</a> <a href="#">YouTube</a>
+        </div>
+    </div>
+    <hr class="footer__hr">
+</footer>
+
+</body>
+</html>

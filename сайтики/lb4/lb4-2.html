@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Статья с боковым меню</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+            background: #f5f7fb;
+            color: #1a2c3e;
+            line-height: 1.5;
+            padding: 2rem 1.5rem;
+        }
+
+        .content-grid {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .article-section {
+            flex: 3;
+            min-width: 240px;
+            padding: 2rem 2rem 2.5rem 2rem;
+            background: #ffffff;
+        }
+
+        .sidebar {
+            flex: 1.2;
+            min-width: 240px;
+            background: #fefcf7;
+            padding: 2rem 1.8rem;
+        }
+
+        .article-section h2 {
+            font-size: 1.7rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.75rem 0;
+            color: #1e4663;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.4rem;
+        }
+
+        .article-section h2:first-of-type {
+            margin-top: 0.5rem;
+        }
+
+        .article-section p {
+            margin: 1rem 0;
+            font-size: 1rem;
+            color: #2c3e4e;
+        }
+
+        .article-section ul, 
+        .article-section .custom-list {
+            margin: 0.75rem 0 1rem 1.5rem;
+        }
+        .article-section li {
+            margin: 0.4rem 0;
+            font-size: 1rem;
+        }
+
+        .article-section h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin: 1.3rem 0 0.5rem 0;
+            color: #2c5a7a;
+        }
+
+        .sidebar .menu-section {
+            margin-bottom: 2.2rem;
+        }
+
+        .sidebar .menu-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .sidebar h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: -0.2px;
+            color: #2c3e66;
+            padding-left: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding-left: 0.25rem;
+        }
+
+        .sidebar li {
+            margin: 0.75rem 0;
+            padding: 0.25rem 0 0.25rem 1rem;
+            transition: all 0.2s;
+            font-size: 0.98rem;
+            font-weight: 500;
+            color: #2c4f6e;
+        }
+
+        @media (max-width: 800px) {
+            body {
+                padding: 1rem;
+            }
+            .content-grid {
+                flex-direction: column;
+            }
+            .sidebar {
+                border-left: none;
+                border-top: 1px solid #e9edf2;
+                padding: 1.8rem;
+            }
+            .article-section {
+                padding: 1.5rem;
+            }
+            .article-section h1 {
+                font-size: 1.8rem;
+            }
+            .article-section h2 {
+                font-size: 1.5rem;
+            }
+            .sidebar h3 {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (min-width: 1600px) {
+            .article-section {
+                padding: 2.5rem 3rem;
+            }
+            .sidebar {
+                padding: 2.5rem 2rem;
+            }
+        }
+
+        a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        hr {
+            margin: 1.8rem 0;
+            border: 0;
+            height: 1px;
+            background: linear-gradient(90deg, #e2e8f0, #cbd5e1, #e2e8f0);
+        }
+        .badge-responsive {
+            display: inline-block;
+            background: #eef2ff;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            color: #2563eb;
+            margin-left: 0.75rem;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-grid">
+        <main class="article-section">
+            <h2>Introduction</h2>
+            <p>Aenean dictum elit sapien, et tempor leo malesuada eget. Praesent sed metus laoreet lacus suscipit auctor in id turpis. Nullam a sapien quis urna tincidunt hendrerit. Nulla consectetur varius diam, et tincidunt velit ullamcorper ac. Sed rhoncus tempus tortor, at ornare nisi gravida at. Duis purus urna, tempor non posuere sed, ultrices ut tortor. Nullam pellentesque mi ut vehicula sagittis. In vel luctus tortor. Vivamus luctus, tellus ac bibendum scelerisque, leo leo lacinia ipsum, vitae aliquet velit enim lobortis erat. Quisque dictum a dolor vel condimentum. Phasellus vel lectus erat. Sed congue nec ex eget varius. Suspendisse ultrices tortor eu porttitor hendrerit.</p>
+            <h2>Additional Information</h2>
+            <p>Duis sed pharetra odio. Donec luctus posuere nibh, eget posuere nisl varius vel. Maecenas urna ante, facilisis id libero ut, vestibulum tristique lacus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque elit massa, dapibus et metus nec, lacinia lacinia diam. Aliquam id efficitur purus. Sed facilisis dolor ac enim ornare pretium. Nulla fermentum nisi eget ligula condimentum, ut dictum felis faucibus. Suspendisse urna purus, pretium sit amet vehicula nec, ullamcorper non tortor.</p>
+            <p>Aenean non placerat eros. Aliquam consequat quis lorem non vulputate. Mauris urna magna, porttitor eget posuere nec, dictum at mi. Aenean ornare libero in est laoreet, sit amet sodales enim bibendum. Etiam est ante, hendrerit sed efficitur vel, porttitor sed lacus. Nunc ipsum lectus, iaculis eget mauris nec, viverra pretium justo. Duis a turpis volutpat elit vulputate porttitor porta eu augue.</p>
+        </main>
+
+        <aside class="sidebar" aria-label="Боковое меню навигации">
+            <div class="menu-section">
+                <h3>Actions</h3>
+                <ul>
+                    <li>Lorem.</li>
+                    <li>Lorem ipsum dolor sit.</li>
+                    <li>Lorem, ipsum.</li>
+                    <li>Lorem ipsum dolor sit.</li>
+                    <li>Lorem, ipsum dolor.</li>
+                </ul>
+            </div>
+
+            <div class="menu-section">
+                <h3>Plans</h3>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet </li>
+                    <li>Lorem ipsum dolor sit amet </li>
+                    <li>Lorem ipsum dolor sit amet </li>
+                    <li>Lorem ipsum dolor sit amet</li>
+                    <li>Lorem ipsum dolor sit amet</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+</body>
+</html>

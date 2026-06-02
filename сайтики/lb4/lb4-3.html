@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Responsive vs Adaptive Design — Информация о событии</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f4f7fc;
+            padding: 2rem 1.5rem;
+            color: #1a2c3e;
+            line-height: 1.4;
+        }
+
+        .event-card {
+            max-width: 1280px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            padding: 2rem 2.2rem 3rem 2.2rem;
+            transition: all 0.2s ease;
+        }
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: #5a7c9a;
+            margin-bottom: 1.6rem;
+            letter-spacing: -0.2px;
+        }
+        .breadcrumb a {
+            text-decoration: none;
+            color: #2c6e9e;
+            font-weight: 500;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .breadcrumb span {
+            color: #8ba0b0;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 750;
+            line-height: 1.2;
+            margin-bottom: 1.8rem;
+            letter-spacing: -0.02em;
+            background: linear-gradient(130deg, #1a3c5c, #2b5f8a);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .info-panel {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem 1.8rem;
+            background: #f9fbfe;
+            padding: 1.2rem 1.8rem;
+            border-radius: 28px;
+            margin: 0.5rem 0 2rem 0;
+            border: 1px solid #eef2f8;
+        }
+
+        .info-item {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 0.6rem;
+            font-size: 1rem;
+            flex-wrap: wrap;
+        }
+        .info-label {
+            font-weight: 700;
+            color: #2c5a7a;
+            text-transform: uppercase;
+            font-size: 0.78rem;
+            letter-spacing: 0.6px;
+            background: #eef3f9;
+            padding: 0.2rem 0.6rem;
+            border-radius: 30px;
+        }
+        .info-value {
+            font-weight: 500;
+            color: #1f3f57;
+        }
+
+        .insight-box {
+            background: #f1f7fd;
+            border-radius: 20px;
+            padding: 1rem 1.4rem;
+            margin: 1rem 0;
+            border-left: 5px solid #3a86b0;
+            color: #1f4a6e;
+            font-size: 0.92rem;
+        }
+        hr {
+            margin: 0.8rem 0;
+            border: 0;
+            height: 1px;
+            background: #e2eaf2;
+        }
+
+        @media (max-width: 1023px) {
+            body {
+                padding: 1.5rem 1.2rem;
+            }
+            .event-card {
+                padding: 1.5rem 1.6rem 2.5rem 1.6rem;
+            }
+            h1 {
+                font-size: 2.2rem;
+                margin-bottom: 1.2rem;
+            }
+            .info-panel {
+                padding: 1rem 1.4rem;
+                gap: 0.8rem 1.2rem;
+            }
+            .info-item {
+                font-size: 0.92rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            body {
+                padding: 1rem;
+            }
+            .event-card {
+                padding: 1.2rem 1.2rem 2rem 1.2rem;
+                border-radius: 28px;
+            }
+            .breadcrumb {
+                font-size: 0.75rem;
+                margin-bottom: 1rem;
+            }
+            h1 {
+                font-size: 1.75rem;
+                line-height: 1.3;
+                margin-bottom: 1rem;
+            }
+            
+            .info-panel {
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                background: #ffffff;
+                border: 1px solid #e9edf2;
+                border-radius: 24px;
+                padding: 0;
+                margin: 0.75rem 0 1.5rem 0;
+                gap: 0;
+                box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+            }
+            
+            .info-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0.9rem 1.2rem;
+                margin: 0;
+                border-bottom: 1px solid #eff3f8;
+                font-size: 0.96rem;
+                width: 100%;
+                gap: 1rem;
+                background: white;
+            }
+            .info-item:last-child {
+                border-bottom: none;
+            }
+            
+            .info-label {
+                font-size: 0.8rem;
+                padding: 0.2rem 0.6rem;
+                background: #eef3f9;
+                border-radius: 30px;
+                font-weight: 700;
+                letter-spacing: 0.4px;
+                text-transform: uppercase;
+            }
+            .info-value {
+                font-weight: 500;
+                text-align: right;
+                color: #1f3f57;
+                font-size: 0.95rem;
+            }
+            
+            .desktop-comment-style {
+                display: none;
+            }
+            .insight-box {
+                font-size: 0.85rem;
+                padding: 0.8rem 1rem;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .event-card {
+                padding: 1rem 1rem 1.8rem 1rem;
+            }
+            h1 {
+                font-size: 1.55rem;
+                margin-bottom: 0.8rem;
+            }
+            .info-item {
+                padding: 0.75rem 1rem;
+            }
+            .info-label {
+                font-size: 0.72rem;
+                padding: 0.15rem 0.55rem;
+            }
+            .info-value {
+                font-size: 0.88rem;
+            }
+            .breadcrumb {
+                font-size: 0.7rem;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .mobile-comment-structure {
+                display: none;
+            }
+            .desktop-comment-style {
+                display: inline;
+            }
+            .comment-row {
+                justify-content: flex-start;
+            }
+        }
+        
+        a, span, div {
+            user-select: text;
+        }
+    </style>
+</head>
+<body>
+<div class="event-card">
+    <div class="breadcrumb">
+        <a href="#">Home</a> <span>/</span> 
+        <a href="#">Articles</a> <span>/</span> 
+        <span style="color:#2c6e9e; font-weight:500;">The Difference Between Responsive and Adaptive Design</span>
+    </div>
+
+    <h1>The Difference Between Responsive and Adaptive Design</h1>
+
+    <div class="info-panel">
+        <div class="info-item">
+            <img src="ava.png" alt="">
+        </div>
+        <div class="info-item">
+            <span class="info-label">Updated</span>
+            <span class="info-value">Nov 17, 2018</span>
+        </div>
+    
+        <div class="info-item">
+            <span class="info-label">Author</span>
+            <span class="info-value">Geoff Graham</span>
+        </div>
+
+        <div class="info-item">
+            <span class="info-label">Comments</span>
+            <span class="info-value desktop-comment-style">
+                49 Comments
+            </span>
+        
+        <div class="info-item">
+            <span class="info-label">Published</span>
+            <span class="info-value">Nov 11, 2018</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>
