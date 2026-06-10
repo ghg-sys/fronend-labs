@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Умные часы WatchFit 3 – GPS, мониторинг здоровья, AMOLED.">
+    <title>Умные часы WatchFit 3 – ТехноМир</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f9fafb; color: #1e293b; line-height: 1.5; }
+        .main-header { background: #ffffff; border-bottom: 3px solid #e2e8f0; padding: 1rem 2rem; position: sticky; top: 0; z-index: 100; }
+        .header-container { max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.2rem; }
+        .logo a { font-size: 1.8rem; font-weight: 800; text-decoration: none; color: #0f3b4c; transition: color 0.2s; }
+        .logo a:hover { color: #e67e22; }
+        .nav-menu ul { display: flex; list-style: none; gap: 1.8rem; flex-wrap: wrap; }
+        .nav-menu a { text-decoration: none; font-weight: 600; color: #334155; border-bottom: 2px solid transparent; transition: all 0.2s; }
+        .nav-menu a:hover { color: #e67e22; border-bottom-color: #e67e22; }
+        .search-form form { display: flex; border: 1px solid #cbd5e1; border-radius: 60px; overflow: hidden; background: white; transition: border 0.2s; }
+        .search-form form:hover { border-color: #e67e22; }
+        .search-form input { border: none; padding: 0.6rem 1rem; width: 200px; outline: none; font-family: inherit; }
+        .search-form button { background: #f1f5f9; border: none; padding: 0 1.2rem; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+        .search-form button:hover { background: #e67e22; color: white; }
+        main { max-width: 1280px; margin: 2rem auto; padding: 0 2rem; }
+        .gallery-container { display: flex; gap: 2rem; flex-wrap: wrap; margin-bottom: 2rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 2rem; }
+        .main-image { flex: 2; min-width: 250px; }
+        .main-image img { width: 100%; max-width: 500px; border-radius: 24px; border: 1px solid #e2e8f0; background: white; padding: 1rem; }
+        .thumbnails { flex: 1; min-width: 120px; }
+        .thumbnails h3 { margin-bottom: 1rem; font-size: 1.2rem; }
+        .thumb-list { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .thumb-list a { display: inline-block; border: 2px solid transparent; border-radius: 12px; transition: border 0.2s; }
+        .thumb-list a:hover { border-color: #e67e22; }
+        .thumb-list img { width: 80px; height: 80px; object-fit: cover; border-radius: 12px; background: #f1f5f9; }
+        .product-details { margin: 2rem 0; padding: 1rem; background: white; border-radius: 24px; border: 1px solid #e2e8f0; }
+        .price-block { margin: 1.5rem 0; font-size: 1.8rem; font-weight: 700; color: #b45309; }
+        .buy-btn { background: #0f3b4c; color: white; border: none; padding: 0.8rem 2rem; border-radius: 60px; font-size: 1rem; font-weight: bold; cursor: pointer; transition: background 0.2s; margin-right: 1rem; }
+        .buy-btn:hover { background: #e67e22; }
+        .delivery-info { margin-top: 1rem; font-size: 0.9rem; color: #2c6e2f; background: #e6f7e6; display: inline-block; padding: 0.3rem 1rem; border-radius: 30px; }
+        .reviews { margin-top: 2rem; border-top: 1px solid #e2e8f0; padding-top: 1.5rem; }
+        .review { background: #f8fafc; padding: 0.8rem; border-radius: 16px; margin: 0.8rem 0; border-left: 4px solid #facc15; }
+        .main-footer { background: #0f172a; color: #cbd5e1; padding: 2rem 2rem 1rem; border-top: 4px solid #e67e22; margin-top: 3rem; }
+        .footer-container { max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem; }
+        .footer-section p:first-child { font-weight: 700; color: #facc15; margin-bottom: 0.5rem; }
+        .footer-section a { color: #cbd5e1; text-decoration: none; margin-right: 1rem; transition: color 0.2s; }
+        .footer-section a:hover { color: #facc15; text-decoration: underline; }
+        hr { margin: 1.5rem 0 0.8rem; border-color: #334155; }
+        .copyright { text-align: center; font-size: 0.8rem; padding-top: 1rem; }
+        @media (max-width: 700px) { .header-container { flex-direction: column; text-align: center; } .gallery-container { flex-direction: column; align-items: center; } }
+    </style>
+</head>
+<body>
+<header class="main-header">
+    <div class="header-container">
+        <div class="logo"><a href="lb2-4.html">📱 ТехноМир</a></div>
+        <nav class="nav-menu"><ul><li><a href="lb2-4.html">Главная</a></li><li><a href="#">Каталог</a></li><li><a href="#">О нас</a></li><li><a href="#">Контакты</a></li><li><a href="#">🛒 Корзина</a></li></ul></nav>
+        <div class="search-form"><form><input type="text" placeholder="Поиск..."><button>Найти</button></form></div>
+    </div>
+</header>
+<main>
+    <div class="gallery-container">
+        <div class="main-image"><img src="Chas.jpg" alt="Умные часы WatchFit 3"></div>
+        <div class="thumbnails">
+            <h3>Фотогалерея</h3>
+            <div class="thumb-list">
+                <a href="" target="_blank"><img src="" alt="Вид 1"></a>
+                <a href="" target="_blank"><img src="" alt="Экран"></a>
+                <a href="" target="_blank"><img src="" alt="Ремешок"></a>
+                <a href="" target="_blank"><img src="" alt="Спорт"></a>
+            </div>
+            <p style="font-size: 0.75rem;">* нажмите на миниатюру для увеличения</p>
+        </div>
+    </div>
+    <div class="product-details">
+        <h2>Умные часы WatchFit 3 – твой здоровый образ жизни</h2>
+        <div class="specs"><h3>📋 Характеристики</h3>
+            <ul><li><b>Экран:</b> 1.78" AMOLED, всегда активный</li><li><b>GPS:</b> встроенный</li><li><b>Датчики:</b> пульс, SpO2, сон, стресс</li><li><b>Спортивные режимы:</b> более 100</li><li><b>Водозащита:</b> 5 ATM</li><li><b>Время работы:</b> до 14 дней</li></ul>
+        </div>
+        <div class="description"><h3>📝 Описание</h3><p>WatchFit 3 – это не просто часы, а персональный трекер здоровья. AMOLED-экран яркий и сочный, встроенный GPS позволяет отслеживать маршруты без телефона. Мониторинг пульса, кислорода в крови, сна и стресса. Более 100 режимов тренировок. Водонепроницаемы для плавания.</p></div>
+        <div class="price-block">8 990 ₽</div>
+        <button class="buy-btn">Добавить в корзину</button>
+        <span class="delivery-info">🚚 Подарок – силиконовый ремешок в комплекте</span>
+    </div>
+    <div class="reviews"><h3>⭐ Отзывы</h3><div class="review"><b>Игорь:</b> Отличный фитнес-трекер, GPS работает чётко.</div><div class="review"><b>Светлана:</b> Экран красивый, батарея живёт 12 дней.</div></div>
+</main>
+<footer class="main-footer">
+    <div class="footer-container"><div class="footer-section"><p>📌 ТехноМир</p><p>© 2026</p></div><div class="footer-section"><p>📞 +7 (800) 555-35-35</p></div><div class="footer-section"><p>🌐 Соцсети</p><a href="#">VK</a> <a href="#">Telegram</a></div></div>
+    <hr><div class="copyright">Все права защищены.</div>
+</footer>
+</body>
+</html>

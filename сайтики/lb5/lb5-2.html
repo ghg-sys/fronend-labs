@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 Задача</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            background-color: #e7e7e7;
+        }
+        div{
+            margin-left: 4px;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+        input, input:nth-child(3), input:nth-child(4){
+            padding: 2px;
+            margin: 4px;
+            border: 0;
+            border: 2px solid gray;
+            border-radius: 4px;
+            background-color: white;
+        }
+        input:nth-child(3){
+            border-color: green;
+        }
+        input:nth-child(3)::placeholder{
+            color: green;
+        }
+        input:nth-child(4){
+            border-color: red;
+        }
+        input:nth-child(4)::placeholder{
+            color: red;
+        }
+        span{
+            margin: auto 4px;
+        }
+        input[type="radio"] {
+            accent-color: green; 
+        }
+        button{
+            margin: 4px;
+            border: 1px solid gray;
+            border-radius: 3px;
+            color: white;
+        }
+        .Active{
+            background-color: green;
+            border-color: green;
+        }
+       .Active:hover, .circleON:hover{
+            background-color: rgb(0, 80, 0);
+            border-color: rgb(0, 80, 0);
+        }
+        .Danger{
+            background-color: red;
+            border-color: red;
+        }
+        .Danger:hover, .circleOFF:hover{
+            background-color: rgb(134, 0, 0);
+            border-color: rgb(134, 0, 0) ;
+        }
+        .Disabled{
+            background-color: gray;
+            border-color: gray;
+        }
+        .circleON, .circleOFF{
+            border-radius: 50%;
+            height: 20px;
+            width: 20px;
+            padding: 1px;
+            background-color: green;
+            border-color: green;
+        }
+        .circleOFF{
+            background-color: red;
+            border-color: red;
+        }
+        textarea{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <div>Inputs</div>
+        <!-- Галочка и крестик сделать -->
+        <input type="text" placeholder="Enter some text"><input type="text" placeholder="valid text"><input type="text" placeholder="invalid text">
+
+        <div>Check Boxes</div>
+        <!-- ДОДЕЛАТЬ -->
+        <label><input type="checkbox">Subscribe</label><label><input type="checkbox">Subscribe</label>
+
+        <div>Radio Buttons</div>
+
+        <span>Gender: <label><input type="radio" name="button">Male</label><label><input type="radio" name="button">Female</label></span>
+
+        <div>Buttons</div>
+
+        <button class="Active">Active</button><button class="Danger">Danger</button><button class="Disabled">Disabled</button><button class="circleON">+</button><button class="circleOFF">-</button>
+    
+        <div>Text Area</div>
+        <textarea cols="60" rows="10" placeholder="Enter some text..."></textarea>
+    </form>
+</body>
+</html>

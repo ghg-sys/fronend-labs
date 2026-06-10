@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 Задача</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h3>Данные карты</h3>
+
+        <label>Номер карты</label>
+        <input type="tel" name="cardnumber" placeholder="1234 5678 9012 3456" maxlength="19">
+
+        <label>Имя владельца</label>
+        <input type="text" name="cardholder" placeholder="IVAN IVANOV">
+
+        <div>
+            <label>Срок действия</label>
+            <input type="tel" name="expiry" placeholder="ММ/ГГ" maxlength="5">
+        </div>
+        <div>
+            <label>CVV / CVN</label>
+            <input type="tel" name="cvv" placeholder="123" maxlength="4">
+        </div>
+    </form>
+</body>
+</html>

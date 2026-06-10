@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 задание</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 2rem 1.5rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .plans-container {
+            max-width: 1300px;
+            width: 100%;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .plan-card {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            transition: transform 1s ease;
+        }
+
+        .plan-card:hover {
+            transform: scale(1.1);
+        }
+
+        .plan-title {
+            font-size: 1.7rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-divider {
+            width: 100%;
+            height: 3px;
+            margin: 0.6rem 0 1rem 0;
+        }
+
+        .plan-card:nth-child(1) .plan-divider,
+        .plan-card:nth-child(1) .buy-btn {
+            background-color: rgb(214, 0, 214);
+        }
+        .plan-card:nth-child(2) .plan-divider,
+        .plan-card:nth-child(2) .buy-btn {
+            background-color: rgb(204, 133, 0);
+        }
+        .plan-card:nth-child(3) .plan-divider,
+        .plan-card:nth-child(3) .buy-btn {
+            background-color: rgb(0, 32, 214);
+        }
+        .plan-card:nth-child(4) .plan-divider,
+        .plan-card:nth-child(4) .buy-btn {
+            background-color: rgb(0, 148, 32);
+        }
+
+        .plan-price {
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 0.5rem 0 0;
+        }
+        .plan-price-period {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: normal;
+            color: #555;
+            margin-top: 4px;
+        }
+
+        .features {
+            list-style: none;
+            margin: 1.2rem 0 1.5rem;
+            padding: 0;
+        }
+        .features li {
+            font-weight: bold;
+            padding: 0.4rem 0;
+        }
+
+        .buy-btn {
+            display: block;
+            width: 100%;
+            padding: 0.7rem;
+            font-size: 1rem;
+            font-weight: bold;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="plans-container">
+        <div class="plan-card">
+            <div class="plan-title">Enterprice</div>
+            <div class="plan-divider"></div>
+            <div class="plan-price">
+                $69
+                <span class="plan-price-period">Per month</span>
+            </div>
+            <ul class="features">
+                <li>10GB disk space</li>
+                <li>100GB monthly</li>
+                <li>20 email accounts</li>
+                <li>Unlimited subdomens</li>
+            </ul>
+            <button class="buy-btn">Купить</button>
+        </div>
+
+        <div class="plan-card">
+            <div class="plan-title">Professional</div>
+            <div class="plan-divider"></div>
+            <div class="plan-price">
+                $29
+                <span class="plan-price-period">Per month</span>
+            </div>
+            <ul class="features">
+                <li>5GB disk space</li>
+                <li>60GB monthly</li>
+                <li>10 email accounts</li>
+                <li>Unlimited subdomens</li>
+            </ul>
+            <button class="buy-btn">Купить</button>
+        </div>
+
+        <div class="plan-card">
+            <div class="plan-title">Standart</div>
+            <div class="plan-divider"></div>
+            <div class="plan-price">
+                $19
+                <span class="plan-price-period">Per month</span>
+            </div>
+            <ul class="features">
+                <li>3GB disk space</li>
+                <li>30GB monthly</li>
+                <li>5 email accounts</li>
+                <li>Unlimited subdomens</li>
+            </ul>
+            <button class="buy-btn">Купить</button>
+        </div>
+
+        <div class="plan-card">
+            <div class="plan-title">Basic</div>
+            <div class="plan-divider"></div>
+            <div class="plan-price">
+                $9
+                <span class="plan-price-period">Per month</span>
+            </div>
+            <ul class="features">
+                <li>1GB disk space</li>
+                <li>10GB monthly</li>
+                <li>2 email accounts</li>
+                <li>Unlimited subdomens</li>
+            </ul>
+            <button class="buy-btn">Купить</button>
+        </div>
+    </div>
+</body>
+</html>

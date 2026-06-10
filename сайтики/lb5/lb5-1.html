@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 Задача</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .container{
+            border: 2px solid orange;
+            width: 400px;
+            height: 40px;
+            margin: 50px auto;
+        }
+        .box{
+            background-color: orange;
+            position: absolute;
+            width: 60px;
+            height: 36px;
+            animation-name: progress-bar;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes progress-bar {
+            from{
+                transform: translateX(0%);
+            }
+            to{
+                transform: translateX(336px);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+</body>
+</html>
